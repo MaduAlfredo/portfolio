@@ -70,7 +70,6 @@ public class Main {
         }
 
 
-//                Author author = new Author(authorName, authorNationality, authorBirthYear);
 
 
         sc.close();
