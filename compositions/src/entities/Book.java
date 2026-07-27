@@ -50,4 +50,16 @@ public class Book {
     public void setAuthor(Author author) {
         this.author = author;
     }
+
+    @Override
+    public String toString() {
+        return "========== BOOK ==========\n" +
+                "Title: " + title +
+                "\nPages: " + numberOfPages +
+                "\nPublishing Year: " + year +
+                "\n\n----- AUTHOR -----\n" +
+                author +
+                "\n==========================\n\n";
+    }
+
 }
