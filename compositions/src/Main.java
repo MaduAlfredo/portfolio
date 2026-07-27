@@ -69,7 +69,14 @@ public class Main {
             books.add(book);
         }
 
+        System.out.println("-------Books available-------");
 
+
+
+        for (Book book : books) {
+            System.out.println(book);
+            System.out.println();
+        }
 
 
         sc.close();

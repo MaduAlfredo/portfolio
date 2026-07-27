@@ -42,4 +42,11 @@ public class Author {
         return age;
 
     }
+
+    @Override
+    public String toString() {
+        return "Name: " + name +
+                "\nNationality: " + nationality +
+                "\nBirth Year: " + birthYear;
+    }
 }
