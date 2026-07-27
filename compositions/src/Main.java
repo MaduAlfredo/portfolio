@@ -48,7 +48,7 @@ public class Main {
             Author authorFound = null;
 
             for(Author currentAuthor : authors) {
-                if(currentAuthor.getName().equals(authorName)){
+                if(currentAuthor.getName().equalsIgnoreCase(authorName)){
                     authorFound = currentAuthor;
                     break;
                 }
