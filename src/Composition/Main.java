@@ -1,4 +1,7 @@
-package Composition.entities;
+package Composition;
+
+import Composition.entities.Author;
+import Composition.entities.Book;
 
 import java.util.ArrayList;
 import java.util.List;
