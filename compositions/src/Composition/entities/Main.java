@@ -1,5 +1,4 @@
-import entities.Author;
-import entities.Book;
+package Composition.entities;
 
 import java.util.ArrayList;
 import java.util.List;
