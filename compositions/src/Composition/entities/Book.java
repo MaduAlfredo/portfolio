@@ -1,4 +1,4 @@
-package entities;
+package Composition.entities;
 
 public class Book {
 
