@@ -1,17 +1,18 @@
 package HeritageAndPolymorphism.Entities;
 
 import HeritageAndPolymorphism.ENUMS.Destinations;
+import HeritageAndPolymorphism.ENUMS.Planes;
 
 public abstract class Plane {
     protected String planeId;
-    protected String model;
+    protected Planes model;
     protected Destinations destination;
     protected Integer capacity;
 
     //Generalization attributes
     public Plane(
             String planeId,
-            String model,
+            Planes model,
             Destinations destination,
             Integer capacity) {
 

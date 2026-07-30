@@ -1,8 +1,9 @@
 package HeritageAndPolymorphism.Entities;
 
 import HeritageAndPolymorphism.ENUMS.Destinations;
+import HeritageAndPolymorphism.ENUMS.Planes;
 
-class CommercialPlane extends Plane {
+public class CommercialPlane extends Plane {
     private Integer flightAttendantQuantity;
     private Double ticketValue;
     private Integer passengerQuantity;
@@ -10,7 +11,7 @@ class CommercialPlane extends Plane {
     //constructor including superclass' attributes
     public CommercialPlane(
             String planeId,
-            String model,
+            Planes model,
             Destinations destination,
             Integer capacity,
             Integer flightAttendantQuantity,

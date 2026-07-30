@@ -1,9 +1,10 @@
 package HeritageAndPolymorphism.Entities;
 
 import HeritageAndPolymorphism.ENUMS.Destinations;
+import HeritageAndPolymorphism.ENUMS.Planes;
 import HeritageAndPolymorphism.ENUMS.RentingType;
 
-class PrivatePlane extends Plane {
+public class PrivatePlane extends Plane {
     //changeable attributes
     private int passengerQuantity;
     private boolean hasCargo;
@@ -19,7 +20,7 @@ class PrivatePlane extends Plane {
     //Constructor including  the superclass attributes
     public PrivatePlane(
             String planeId,
-            String model,
+            Planes model,
             Destinations destination,
             Integer capacity,
             int passengerQuantity,
