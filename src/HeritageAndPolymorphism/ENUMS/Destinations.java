@@ -17,4 +17,15 @@ public enum Destinations {
         return distance;
     }
 
+    public static Destinations fromString (String  text){
+
+        for(Destinations destinations : Destinations.values()){
+            if (destinations.name().equalsIgnoreCase(text.trim())){
+                return destinations;
+            }
+        }
+        throw new IllegalArgumentException("Invalid destination.");
+
+    }
+
 }

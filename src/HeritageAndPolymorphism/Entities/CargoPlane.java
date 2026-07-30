@@ -1,8 +1,9 @@
 package HeritageAndPolymorphism.Entities;
 
 import HeritageAndPolymorphism.ENUMS.Destinations;
+import HeritageAndPolymorphism.ENUMS.Planes;
 
-class CargoPlane extends Plane{
+public class CargoPlane extends Plane{
     private String itemType;
     private boolean livingCargo;
     private Double priceByTon;
@@ -12,7 +13,7 @@ class CargoPlane extends Plane{
     //Constructor including superclass' attributes
     public CargoPlane(
             String planeId,
-            String model,
+            Planes model,
             Destinations destination,
             Integer capacity,
             String itemType,
