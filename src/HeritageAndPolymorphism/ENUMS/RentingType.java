@@ -1,17 +1,17 @@
 package HeritageAndPolymorphism.ENUMS;
 
 public enum RentingType {
-    DESTINATION,
-    DAY,
+    DESTINATION ("Destination"),
+    DAY("Day");
 
     private final String rentingType;
 
-    RentingType(String rentingType){this.rentingType = rentingType};
+    RentingType(String rentingType){this.rentingType = rentingType;}
 
-    public String getRentingType (){return  rentingType};
+    public String getRentingType (){return  rentingType;}
 
     public static RentingType fromString(String text) {
-        for (RentingType rentingType = RentingType.values()) {
+        for (RentingType rentingType : RentingType.values()) {
             if(rentingType.getRentingType().equalsIgnoreCase(text.trim())){
                 return rentingType;
             }

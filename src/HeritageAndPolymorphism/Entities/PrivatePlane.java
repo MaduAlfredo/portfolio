@@ -47,8 +47,14 @@ public class PrivatePlane extends Plane {
         return hasCargo;
     }
 
-    public void setHasCargo(boolean hasCargo) {
-        this.hasCargo = hasCargo;
+    public void setHasCargo(String hasCargo) {
+        if(hasCargo.equalsIgnoreCase("yes")){
+            this.hasCargo =true;
+        } else if (hasCargo.equalsIgnoreCase("no")) {
+            this.hasCargo = false;
+        } else {
+            throw new IllegalArgumentException("Please enter yes or no.");
+        }
     }
 
     public RentingType getType() {
@@ -61,6 +67,19 @@ public class PrivatePlane extends Plane {
 
     public void setDaysQuantity(Integer daysQuantity) {
         this.daysQuantity = daysQuantity;
+    }
+
+    @Override
+    public String toString(){
+        return "------------------------\n"+
+                "\nPlane Identification: "+planeId +
+                "\nDestination: "+destination+
+                "\nCapacity: "+capacity+"passengers"+
+                "\nPassengers on board: "+passengerQuantity+
+                "\nContains cargo? "+hasCargo+
+                "\nRenting Type: "+ getType().getRentingType()+
+                "\nFlight Total Profit:  US$"+totalFlightProfit();
+
     }
 
     //Override the superclass method and calculates profit base on type of flight

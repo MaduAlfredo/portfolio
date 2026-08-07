@@ -50,12 +50,26 @@ public class CommercialPlane extends Plane {
         this.passengerQuantity = passengerQuantity;
     }
 
+    //Overrides Plane's toString method
+    @Override
+    public String toString(){
+        return "------------------------\n"+
+                "\nPlane Identification: "+planeId +
+                "\nDestination: "+destination+
+                "\nCapacity: "+capacity+"  passengers"+
+                "\nFlight attendants on board: "+getFlightAttendantQuantity()+
+                "\nTicket Price: "+getTicketValue()+
+                "\nPassengers on board: "+getPassengerQuantity()+
+                "\nFlight Total Profit:  US$"+totalFlightProfit();
+
+    }
+
     //Overrides the superclass' method and calculates how much profit is made based on the number of passengers
     @Override
     public Double totalFlightProfit()  {
 
         return ticketValue*passengerQuantity;
-    };
+    }
 
 
 

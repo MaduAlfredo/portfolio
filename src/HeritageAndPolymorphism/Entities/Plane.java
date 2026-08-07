@@ -22,6 +22,8 @@ public abstract class Plane {
         this.capacity = capacity;
     }
 
+    public abstract String toString();
+
     public abstract Double totalFlightProfit();
 
 
