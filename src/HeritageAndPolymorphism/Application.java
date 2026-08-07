@@ -24,10 +24,18 @@ public class Application {
         System.out.println("Plane ID: ");
         String ID = sc.nextLine();
 
-        System.out.println("Plane model:  ");
+        System.out.println("Select plane model:  ");
+        for (Planes plane : Planes.values()) {
+            System.out.println(plane.getPlaneType());
+        }
+
         Planes planeModel = Planes.fromString(sc.nextLine());
 
         System.out.println("Destination:  ");
+        for (Destinations destiny : Destinations.values()) {
+            System.out.println(destiny.getDestinyName());
+        }
+
         Destinations destination = Destinations.fromString(sc.nextLine());
 
         System.out.println("Type of flight: ");
@@ -38,7 +46,9 @@ public class Application {
         sc.nextLine();
 
         switch (flightType.toLowerCase()) {
-            case "commercial" :
+
+            case "commercial":
+
                 System.out.println("Flight attendant quantity: ");
                 int flightAttendantQuantity = sc.nextInt();
                 sc.nextLine();
@@ -58,28 +68,33 @@ public class Application {
                         planeCapacity,
                         flightAttendantQuantity,
                         ticketPrice,
-                        passengerQuantity );
+                        passengerQuantity
+                );
 
                 flights.add(commercialFlight);
 
                 break;
+
             case "cargo":
+
                 System.out.println("Describe what is being transported: ");
                 String item = sc.nextLine();
 
                 System.out.println("It is a living cargo? ");
                 boolean liveCargo = sc.nextBoolean();
+                sc.nextLine();
 
                 System.out.println("What is the price by ton: ");
                 double priceByTon = sc.nextDouble();
                 sc.nextLine();
 
-                System.out.println("Insert the total weight  on board: ");
-                int  totalWeight = sc.nextInt();
+                System.out.println("Insert the total weight on board: ");
+                int totalWeight = sc.nextInt();
                 sc.nextLine();
 
                 System.out.println("In flight team? ");
-                boolean inFlightTeam = sc.nextBoolean();
+                boolean hasInFlightTeam = sc.nextBoolean();
+                sc.nextLine();
 
                 CargoPlane cargoFlight = new CargoPlane(
                         ID,
@@ -90,40 +105,59 @@ public class Application {
                         liveCargo,
                         priceByTon,
                         totalWeight,
-                        inFlightTeam );
+                        hasInFlightTeam
+                );
 
                 flights.add(cargoFlight);
+
                 break;
-            case  "private" :
+
+            case "private":
+
                 System.out.println("Number of passengers: ");
                 int numberOfPassengers = sc.nextInt();
                 sc.nextLine();
 
                 System.out.println("Does the flight include cargo: ");
-                boolean hasCargo  = sc.nextBoolean();
+                boolean hasCargo = sc.nextBoolean();
+                sc.nextLine();
 
                 System.out.println("Renting type: ");
                 RentingType rentingType = RentingType.fromString(sc.nextLine());
 
-                PrivatePlane privateFlight  = new PrivatePlane(
+                Integer daysQuantity = null;
+
+                if (rentingType == RentingType.DAY) {
+                    System.out.println("Number of rental days: ");
+                    daysQuantity = sc.nextInt();
+                    sc.nextLine();
+                }
+
+                PrivatePlane privateFlight = new PrivatePlane(
                         ID,
                         planeModel,
                         destination,
                         planeCapacity,
                         numberOfPassengers,
                         hasCargo,
-                        rentingType);
+                        rentingType
+                );
+
+                privateFlight.setDaysQuantity(daysQuantity);
+
                 flights.add(privateFlight);
+
                 break;
+
             default:
                 System.out.println("Invalid flight type.");
         }
 
-//comentario
+        for (Plane flight : flights) {
+            System.out.println(flight);
+        }
 
-
-                sc.close();
-
+        sc.close();
     }
 
 }
